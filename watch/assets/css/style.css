@@ -1,0 +1,201 @@
+:root {
+    --primary-color: #ff4500;
+    --secondary-color: #222;
+    --tertiary-color: #333;
+    --highlight-color: #ff0066;
+    --font-family: 'Arial', sans-serif;
+    --text-color: white;
+    --border-radius: 5px;
+    --gap-size: 15px;
+    --header-padding: 15px;
+    --input-padding: 8px;
+    --input-width: 200px;
+    --anime-card-width: 180px;
+    --anime-card-height: 220px;
+    --anime-card-img-height: 250px;
+    --font-size-small: 12px;
+    --font-size-medium: 14px;
+    --font-size-large: 18px;
+}
+
+body {
+    font-family: var(--font-family);
+    background: var(--secondary-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--secondary-color);
+    padding: var(--header-padding);
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header input {
+    padding: var(--input-padding);
+    border-radius: var(--border-radius);
+    border: none;
+    width: var(--input-width);
+    text-align: center;
+}
+
+.anime-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--gap-size);
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.anime-card {
+    background: var(--tertiary-color);
+    padding: 10px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+    display: inline-block;
+    width: 150px;
+    margin: 10px;
+    border: 1px solid white;
+}
+
+.anime-card img {
+    width: 100%;
+    height: var(--anime-card-height);
+    object-fit: cover;
+}
+
+.anime-card h2 {
+    font-size: var(--font-size-small);
+    margin: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.anime-card p {
+    font-size: var(--font-size-small);
+    margin: 0 10px 10px;
+    color: #bbb;
+    height: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.anime-card:hover {
+    background: var(--primary-color);
+    transform: scale(1.05);
+}
+
+#anime-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--gap-size);
+}
+#api-anime-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--gap-size);
+}
+#search-box {
+    width: 80%;
+    max-width: 400px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--highlight-color);
+    outline: none;
+    text-align: center;
+    margin: 10px auto;
+}
+
+h1, h2 {
+    text-align: center;
+}
+a
+#video-player {
+    width: 100%;
+    max-width: 800px;
+    display: block;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+}
+
+video {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+}
+
+#episode-list {
+    text-align: center;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    background: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+}
+
+#video-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.video-item {
+    padding: 10px;
+    background: var(--primary-color);
+    color: var(--text-color);
+    cursor: pointer;
+    border-radius: var(--border-radius);
+}
+
+.video-item:hover {
+    background: #d73c00;
+}
+
+#video-player {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Ensure that the layout wraps properly */
+@media (max-width: 768px) {
+    .anime-container {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    header input {
+        width: 80%;
+    }
+
+    #video-player {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,37 @@
+[
+    {
+        "title": "attackOnTitan",
+        "file": "Public/attackOnTitan/",
+        "image":"img.png",
+        "description":"the anime description you can you add it "
+    
+    },
+
+
+    {
+        "title": "hanterXhanter",
+        "file": "Public/hanterXhanter/",
+        "image":"img.png",
+        "description":"the anime description you can you add it "
+    
+    },
+
+
+    {
+        "title": "deathNot",
+        "file": "Public/deathNot/",
+        "image":"img.png",
+        "description":"the anime description you can you add it "
+    
+    },
+
+
+    {
+        "title": "Monster",
+        "file": "Public/Monster/",
+        "image":"img.png",
+        "description":"the anime description you can you add it "
+    }
+
+
+]

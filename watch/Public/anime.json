@@ -1,37 +1,46 @@
 [
     {
-        "title": "attackOnTitan",
-        "file": "Public/attackOnTitan/",
-        "image":"img.png",
-        "description":"the anime description you can you add it "
-    
+        "title": "attack On Titan",
+        "namePath": "attackOnTitan",
+        "file": "Public/attackOnTitan/", 
+        "image": [
+            "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2Q1OXkwd2d5bHlvOXBubjVqbDBqcTBpYTQ1M3dkMXlsdnhvaXlzZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7bugwhhJE9WhxkYw/giphy.gif",
+            "https://media.giphy.com/media/IUiLMgsBmb3zi/giphy.gif?cid=ecf05e47vum62vbbp8bii9xtl9t1w9x13h31x2tdf3cctoed&ep=v1_gifs_search&rid=giphy.gif&ct=g",
+            "https://media.giphy.com/media/xUPGcgZzw18zgpXktO/giphy.gif?cid=ecf05e47yfc3cacedonj1iif3z0gwonvxswr00lp3wl0bg8j&ep=v1_gifs_search&rid=giphy.gif&ct=g"
+        ],
+        "description": "the anime description you can you add it "
     },
-
-
     {
-        "title": "hanterXhanter",
-        "file": "Public/hanterXhanter/",
-        "image":"img.png",
-        "description":"the anime description you can you add it "
-    
+        "title": "hunter X hunter",
+        "namePath": "hunterXhunter",
+        "file": "Public/hunterXhunter/",
+        "image": [
+            "https://media.giphy.com/media/HGQ4RWHYtw9Dmhj7mk/giphy.gif?cid=790b7611qofubj0z0erzsadklo5qot3dorapdacneokueyp0&ep=v1_gifs_search&rid=giphy.gif&ct=g",
+            "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcW9mdWJqMHowZXJ6c2Fka2xvNXFvdDNkb3JhcGRhY25lb2t1ZXlwMCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/nbB1CV1fazlGo/giphy.gif",
+            "https://media.giphy.com/media/5argtR58g51Xq/giphy.gif?cid=ecf05e4722l2ffrzkja7bxrfq1aqhngwicu07jbqup16bjg6&ep=v1_gifs_search&rid=giphy.gif&ct=g"
+        ],
+        "description": "the anime description you can you add it "
     },
-
-
     {
-        "title": "deathNot",
+        "title": "Death Note",
+        "namePath": "DeathNote",
         "file": "Public/deathNot/",
-        "image":"img.png",
-        "description":"the anime description you can you add it "
-    
+        "image": [
+            "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExY25sdjhvOGttaHJtdGdqdnZ4ajl6Njh3OWVucHp2bmZxYXJlZnJnZiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3pTtbLJ7Jd0YM/giphy.gif",
+            "https://media.giphy.com/media/xT1XH3NIegS0FBc1K8/giphy.gif?cid=790b7611cnlv8o8kmhrmtgjvvxj9z68w9enpzvnfqarefrgf&ep=v1_gifs_search&rid=giphy.gif&ct=g",
+            "https://media.giphy.com/media/BK5q771QamPcs/giphy.gif?cid=790b7611subsh7hobjkp3j3fat0cdxjx8jwzg4bmwzchu5hj&ep=v1_gifs_search&rid=giphy.gif&ct=g"
+        ],
+        "description": "the anime description you can you add it "
     },
-
-
     {
-        "title": "Monster",
-        "file": "Public/Monster/",
-        "image":"img.png",
-        "description":"the anime description you can you add it "
+        "title": "vinland Saga",
+        "namePath": "vinlandSaga",
+        "file": "Public/vinlandsaga/",
+        "image": [
+            "https://media.giphy.com/media/6prNKZT3vv7W/giphy.gif?cid=ecf05e479mao9dt73f124n99dguqy440vmdj3x36bm4q3tsw&ep=v1_gifs_search&rid=giphy.gif&ct=g",
+            "https://media.giphy.com/media/8GAjKbr1gu3MA/giphy.gif?cid=ecf05e47mzvmt1h08wo6g1lsihrl2xiz3n8c9sfgkkaxtjmw&ep=v1_gifs_search&rid=giphy.gif&ct=g",
+            "https://media.giphy.com/media/JLYQnbND9gkYU/giphy.gif?cid=ecf05e47o8hqx8c93w7st41exdsnd3sdg64hhyqrudvgt0dz&ep=v1_gifs_related&rid=giphy.gif&ct=g"
+        ],
+        "description": "the anime description you can you add it "
     }
-
-
 ]

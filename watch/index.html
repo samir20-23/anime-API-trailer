@@ -17,7 +17,7 @@
         <section>
             <h2>Local Anime</h2>
             <div id="anime-list">
-                <div v-for="anime in filteredLocalAnime" :key="anime.title" class="anime-card" @click="goToWatch(anime.title)">
+                <div v-for="anime in filteredLocalAnime" :key="anime.title" class="anime-card" @click="goToWatch(anime.namePath)">
                     <img :src="anime.image" :alt="anime.title">
                     <h2>{{ anime.title }}</h2>
                     <p>{{ anime.description.substring(0, 50) }}...</p>

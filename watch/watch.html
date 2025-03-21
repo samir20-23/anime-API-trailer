@@ -15,7 +15,7 @@
         <div id="video-list">
             <div v-for="video in videos" :key="video.title" class="video-item" 
                  @click="playVideo(video.file)">
-                {{ video.title }}
+               <h4>{{  video.Season  }}:</h4> {{ video.title }}
             </div>
         </div>
         <div id="video-player">

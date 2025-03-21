@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #ff4500;
+    --primary-color: #8d30eabe;
     --secondary-color: #222;
     --tertiary-color: #333;
     --highlight-color: #ff0066;
@@ -70,7 +70,7 @@ header input {
     transition: 0.3s;
     text-align: center;
     display: inline-block;
-    width: 150px;
+    width: 188px;
     margin: 10px;
     border: 1px solid white;
 }
@@ -169,15 +169,20 @@ button {
 }
 
 .video-item {
-    padding: 10px;
+    padding: 5px;
     background: var(--primary-color);
     color: var(--text-color);
     cursor: pointer;
+    text-shadow: 0 1px 1px black ;
     border-radius: var(--border-radius);
 }
-
+.video-item h4{
+    font-size: 12px;
+    padding: 0; 
+    color: #e9b1ff;
+}
 .video-item:hover {
-    background: #d73c00;
+    background: #d73d006c;
 }
 
 #video-player {

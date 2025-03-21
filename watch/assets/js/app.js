@@ -14,16 +14,23 @@ createApp({
         }
     },
     methods: {
-        async fetchAnimeData() {
-            const res = await fetch('./public/anime.json');
-            this.localAnime = await res.json();
+       async fetchAnimeData() {
+    const res = await fetch('./public/anime.json');
+    let animeData = await res.json();
 
-            const apiRes = await fetch('./public/api.json');
-            const apiData = await apiRes.json();
-            const apiAnimeRes = await fetch(apiData.url);
-            const apiAnimeData = await apiAnimeRes.json();
-            this.topAnime = apiAnimeData.data;
-        },
+    // Add a random image selection for each anime
+    this.localAnime = animeData.map(anime => {
+        const randomImage = anime.image[Math.floor(Math.random() * anime.image.length)];  // Select a random image
+        return { ...anime, image: randomImage };  // Add the random image to each anime
+    });
+
+    const apiRes = await fetch('./public/api.json');
+    const apiData = await apiRes.json();
+    const apiAnimeRes = await fetch(apiData.url);
+    const apiAnimeData = await apiAnimeRes.json();
+    this.topAnime = apiAnimeData.data;
+}
+,
         goToWatch(animeTitle) {
             window.location.href = `watch.html?anime=${encodeURIComponent(animeTitle)}`;
         },

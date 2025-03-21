@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Watch</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Anime Watch</h1>
+        <input type="text" v-model="searchQuery" placeholder="Search anime..." id="search-box">
+    </header>
+
+    <main id="app">
+        <!-- 🟢 القسم الأول: عرض الأنمي المحلي -->
+        <section>
+            <h2>Local Anime</h2>
+            <div id="anime-list">
+                <div v-for="anime in filteredLocalAnime" :key="anime.title" class="anime-card" @click="goToWatch(anime.namePath)">
+                    <img :src="anime.image" :alt="anime.title">
+                    <h2>{{ anime.title }}</h2>
+                    <p>{{ anime.description.substring(0, 50) }}...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 🔵 القسم الثاني: عرض الأنمي من API -->
+        <section>
+            <h2>Top Anime</h2>
+            <div id="api-anime-list">
+                <div v-for="anime in topAnime" :key="anime.mal_id" class="anime-card" @click="showTrailer(anime.trailer)">
+                    <img :src="anime.images.jpg.image_url" :alt="anime.title">
+                    <h2>{{ anime.title }}</h2>
+                </div>
+            </div>
+            <iframe id="trailer-frame" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+        </section>
+    </main>
+
+    <script src="assets/js/vue.global.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

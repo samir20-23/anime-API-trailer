@@ -1,8 +1,14 @@
-  <div align="center"> 
+<div align="center"> 
+    <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2Q1OXkwd2d5bHlvOXBubjVqbDBqcTBpYTQ1M3dkMXlsdnhvaXlzZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7bugwhhJE9WhxkYw/giphy.gif" alt="Typing SVG" />
+      </a>
+</div> 
+
+<div align="center"> 
     <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=17&duration=4000&pause=1000&color=6D26BFFF&center=true&vCenter=true&width=482&lines=Free+Apis" alt="Typing SVG" />
       </a>
 </div> 
  
+
 ---
 
 ## 📚 General APIs

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium API Directory</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    
+    <!-- Ambient Background Bubbles/Gradients -->
+    <div class="ambient-bg ambient-bg-1"></div>
+    <div class="ambient-bg ambient-bg-2"></div>
+
+    <div class="container">
+        
+        <!-- Header & Search -->
+        <header class="header">
+            <h1 class="glow-text">Explore APIs</h1>
+            <p class="subtitle">Search through hundreds of free public APIs for your next project</p>
+            
+            <div class="search-wrapper">
+                <input type="text" id="searchInput" class="search-input glassmorphism" placeholder="Search for Cat Facts, Weather, Malware APIs..." autocomplete="off">
+            </div>
+            <div class="stats" id="stats">Loading APIs...</div>
+        </header>
+
+        <!-- Main Content Grid -->
+        <main id="api-grid" class="api-grid">
+            <!-- API Cards will be injected here via app.js -->
+        </main>
+
+    </div>
+
+    <!-- API Modal -->
+    <div id="apiModal" class="modal-overlay">
+        <div class="modal-content glassmorphism">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <h2 id="modalTitle" class="glow-text">API Details</h2>
+            <div id="modalLoading" class="modal-loading">Fetching insights...</div>
+            <div id="modalResults" class="modal-results"></div>
+            <a id="modalSourceLink" href="#" target="_blank" class="source-link">Visit Official API Details</a>
+        </div>
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>

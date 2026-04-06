@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Devgenius — Search Everything, Discover Anything</title>
+  <meta name="description" content="Devgenius is a smart search and discovery platform that searches across 1000+ public APIs covering anime, animals, space, art, music, science, and everything in the world." />
+  <meta property="og:title" content="Devgenius — Universal API Search" />
+  <meta property="og:description" content="Search everything. Discover anything. One search across 1000+ public APIs." />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/landing.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%237c3aed'/><text y='22' x='6' font-size='20'>✨</text></svg>" />
+</head>
+<body>
+
+<!-- ─── Navbar ─────────────────────────────────────────────────────────────── -->
+<nav class="navbar" id="navbar">
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-icon">✨</div>
+    <span class="gradient-text">Devgenius</span>
+  </a>
+
+  <div class="nav-links">
+    <a href="/" class="nav-link active" id="nav-home">Explore</a>
+    <a href="#categories" class="nav-link">Categories</a>
+    <a href="/results.html?q=random+discovery" class="nav-link">Random</a>
+    <a href="#about" class="nav-link">About</a>
+  </div>
+
+  <div class="nav-actions">
+    <button class="nav-search-btn" id="nav-search-btn" aria-label="Search">
+      <span>🔍</span> Quick Search
+    </button>
+    <button class="btn-icon" id="theme-toggle" title="Toggle Theme">🌙</button>
+  </div>
+</nav>
+
+<!-- ─── Stars Canvas ────────────────────────────────────────────────────────── -->
+<canvas class="stars-canvas" id="stars"></canvas>
+
+<!-- ─── Hero Section ────────────────────────────────────────────────────────── -->
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      1000+ APIs • 40+ Categories • Live Data
+    </div>
+
+    <h1 class="hero-title">
+      Search <span class="gradient-text">Everything.</span><br />
+      Discover <span class="gradient-text">Anything.</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      One powerful search across 1000+ public APIs — anime, space, animals, music, art, science, and every subject in the world.
+    </p>
+
+    <!-- Main Search Bar -->
+    <div class="search-container" id="hero-search-container">
+      <div class="search-box" id="hero-search-box">
+        <span class="search-icon">🔍</span>
+        <input
+          type="text"
+          class="search-input"
+          id="hero-search-input"
+          placeholder="Search anything... anime, space, cats, music..."
+          autocomplete="off"
+          spellcheck="false"
+          aria-label="Search across all APIs"
+        />
+        <button class="search-clear" id="hero-search-clear" title="Clear">✕</button>
+        <button class="search-submit" id="hero-search-submit">
+          <span>🚀</span>
+          <span>Search</span>
+        </button>
+      </div>
+
+      <!-- Autocomplete dropdown -->
+      <div class="search-dropdown" id="hero-dropdown">
+        <div class="dropdown-section-label" id="dropdown-label">Recent Searches</div>
+        <div id="dropdown-items"></div>
+      </div>
+    </div>
+
+    <!-- Quick category chips -->
+    <div class="hero-categories" id="hero-categories">
+      <button class="hero-category-chip" data-query="anime characters">⛩️ Anime</button>
+      <button class="hero-category-chip" data-query="random dogs">🐾 Animals</button>
+      <button class="hero-category-chip" data-query="space news nasa">🚀 Space</button>
+      <button class="hero-category-chip" data-query="impressionist art">🎨 Art</button>
+      <button class="hero-category-chip" data-query="jazz music">🎵 Music</button>
+      <button class="hero-category-chip" data-query="cocktail recipes">🍹 Food</button>
+      <button class="hero-category-chip" data-query="pokemon">⚡ Games</button>
+      <button class="hero-category-chip" data-query="bitcoin crypto">₿ Crypto</button>
+      <button class="hero-category-chip" data-query="world countries">🗺️ Geography</button>
+      <button class="hero-category-chip" data-query="funny jokes">😂 Fun</button>
+    </div>
+
+    <!-- Stats -->
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-value" id="stat-apis">1000+</div>
+        <div class="stat-label">Public APIs</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">40+</div>
+        <div class="stat-label">Categories</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">∞</div>
+        <div class="stat-label">Discoveries</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="scroll-indicator" id="scroll-down">
+    <div class="scroll-arrow">↓</div>
+    <span>Explore</span>
+  </div>
+</section>
+
+<!-- ─── Discovery Section ────────────────────────────────────────────────────── -->
+<section class="discovery-section section" id="discovery">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">
+          <span class="section-title-icon">🌌</span>
+          Random Discovery
+        </h2>
+        <p class="section-subtitle">Live data from multiple APIs — different every time</p>
+      </div>
+      <div class="discovery-controls">
+        <button class="shuffle-btn" id="shuffle-btn">
+          <span class="shuffle-icon">🔀</span>
+          Shuffle
+        </button>
+      </div>
+    </div>
+
+    <div id="discovery-grid" class="grid-4 stagger-children">
+      <!-- Loaded dynamically -->
+    </div>
+
+    <div id="discovery-loading" class="grid-4">
+      <!-- Skeleton cards -->
+    </div>
+  </div>
+</section>
+
+<!-- ─── Trending Topics ──────────────────────────────────────────────────────── -->
+<section class="trending-section" id="trending">
+  <div class="container">
+    <h2 class="section-title">
+      <span class="section-title-icon">🔥</span>
+      Trending Now
+    </h2>
+    <div class="trending-chips" id="trending-chips">
+      <!-- Loaded dynamically -->
+    </div>
+  </div>
+</section>
+
+<!-- ─── Category Browser ─────────────────────────────────────────────────────── -->
+<section class="categories-section section" id="categories">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">
+          <span class="section-title-icon">🗂️</span>
+          Browse by Category
+        </h2>
+        <p class="section-subtitle" id="category-count">Loading categories...</p>
+      </div>
+    </div>
+    <div class="category-grid" id="category-grid">
+      <!-- Loaded dynamically -->
+    </div>
+  </div>
+</section>
+
+<!-- ─── About Section ────────────────────────────────────────────────────────── -->
+<section class="section" id="about" style="background: var(--bg-secondary); border-top: 1px solid var(--border-subtle);">
+  <div class="container text-center">
+    <h2 class="section-title" style="justify-content: center; margin-bottom: 16px;">
+      <span>⚡</span>
+      How Devgenius Works
+    </h2>
+    <p style="color: var(--text-secondary); max-width: 640px; margin: 0 auto 48px; font-size: 1rem; line-height: 1.7;">
+      Type anything into the search bar. Devgenius intelligently maps your query to relevant APIs, fetches results in parallel, and presents them in a unified, beautiful interface.
+    </p>
+    <div class="grid-3" style="text-align: left; max-width: 900px; margin: 0 auto;">
+      <div class="card" style="padding: 24px;">
+        <div style="font-size: 2rem; margin-bottom: 12px;">🧠</div>
+        <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 8px;">Smart Matching</h3>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">AI-powered keyword extraction maps any query to the most relevant API categories automatically.</p>
+      </div>
+      <div class="card" style="padding: 24px;">
+        <div style="font-size: 2rem; margin-bottom: 12px;">⚡</div>
+        <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 8px;">Parallel Fetching</h3>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">Multiple APIs are queried simultaneously for the fastest possible results, even across hundreds of sources.</p>
+      </div>
+      <div class="card" style="padding: 24px;">
+        <div style="font-size: 2rem; margin-bottom: 12px;">🎨</div>
+        <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 8px;">Adaptive Cards</h3>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">Results are rendered as image cards, text cards, or data cards based on content type. Always beautiful.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Footer ────────────────────────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="footer-brand-logo">
+          <div class="nav-logo-icon" style="width:28px;height:28px;font-size:14px;">✨</div>
+          <span class="gradient-text">Devgenius</span>
+        </div>
+        <p class="footer-brand-desc">
+          Search everything. Discover anything. A universal API discovery platform connecting you to 1000+ public APIs in one beautiful interface.
+        </p>
+        <div class="flex gap-2">
+          <span class="badge badge-purple">1000+ APIs</span>
+          <span class="badge badge-cyan">Open Source</span>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Explore</div>
+        <span class="footer-link" onclick="searchFor('anime')">Anime</span>
+        <span class="footer-link" onclick="searchFor('animals')">Animals</span>
+        <span class="footer-link" onclick="searchFor('space science')">Space</span>
+        <span class="footer-link" onclick="searchFor('music')">Music</span>
+        <span class="footer-link" onclick="searchFor('art design')">Art & Design</span>
+      </div>
+      <div>
+        <div class="footer-col-title">Categories</div>
+        <span class="footer-link" onclick="searchFor('pokemon games')">Games</span>
+        <span class="footer-link" onclick="searchFor('food recipes')">Food</span>
+        <span class="footer-link" onclick="searchFor('bitcoin crypto')">Crypto</span>
+        <span class="footer-link" onclick="searchFor('funny jokes')">Entertainment</span>
+        <span class="footer-link" onclick="searchFor('countries world')">Geography</span>
+      </div>
+      <div>
+        <div class="footer-col-title">Data Sources</div>
+        <span class="footer-link">Jikan API</span>
+        <span class="footer-link">PokéAPI</span>
+        <span class="footer-link">Art Institute of Chicago</span>
+        <span class="footer-link">Open Library</span>
+        <span class="footer-link">+1000 more</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Devgenius — Built with ✨ and 1000+ public APIs</span>
+      <span>Powered by free, public APIs worldwide</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── Toast Container ──────────────────────────────────────────────────────── -->
+<div class="toast-container" id="toast-container"></div>
+
+<script src="/js/cards.js"></script>
+<script src="/js/search.js"></script>
+<script src="/js/discovery.js"></script>
+<script src="/js/app.js"></script>
+</body>
+</html>

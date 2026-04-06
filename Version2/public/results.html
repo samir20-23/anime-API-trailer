@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search Results — Devgenius</title>
+  <meta name="description" content="Search results from 1000+ public APIs. Find anime, animals, music, art, science, and more." />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/results.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%237c3aed'/><text y='22' x='6' font-size='20'>✨</text></svg>" />
+</head>
+<body class="results-page">
+
+<!-- ─── Navbar ─────────────────────────────────────────────────────────────── -->
+<nav class="navbar" id="navbar">
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-icon">✨</div>
+    <span class="gradient-text">Devgenius</span>
+  </a>
+
+  <div class="nav-links">
+    <a href="/" class="nav-link">Explore</a>
+    <a href="/#categories" class="nav-link">Categories</a>
+    <a href="/results.html?q=random+discovery" class="nav-link">Random</a>
+  </div>
+
+  <div class="nav-actions">
+    <button class="btn-icon" id="theme-toggle" title="Toggle Theme">🌙</button>
+  </div>
+</nav>
+
+<!-- ─── Results Header ───────────────────────────────────────────────────────── -->
+<div class="results-header">
+  <div class="results-header-inner">
+    <div class="results-search-row">
+      <div class="results-search-box">
+        <span style="color: var(--text-muted);">🔍</span>
+        <input
+          type="text"
+          class="results-search-input"
+          id="results-search-input"
+          placeholder="Search again..."
+          autocomplete="off"
+        />
+      </div>
+      <button class="btn-primary" id="results-search-btn">Search</button>
+      <a href="/" class="btn-secondary">← Home</a>
+    </div>
+    <div class="results-meta">
+      <span class="results-count" id="results-count">Searching...</span>
+      <div class="results-category-pills" id="results-category-pills"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── Results Body ──────────────────────────────────────────────────────────── -->
+<div class="results-body">
+
+  <!-- Sidebar Filters -->
+  <aside class="filters-sidebar" id="filters-sidebar">
+    <div class="filters-header">
+      <span class="filters-title">Filters</span>
+      <span class="filters-clear" id="filters-clear">Clear all</span>
+    </div>
+
+    <!-- Content Type -->
+    <div class="filter-group">
+      <div class="filter-group-title">Content Type</div>
+      <div class="filter-option" data-filter="type" data-value="image">
+        <div class="filter-checkbox" id="check-image"></div>
+        <span class="filter-label">🖼️ Images</span>
+        <span class="filter-count" id="count-image">0</span>
+      </div>
+      <div class="filter-option" data-filter="type" data-value="text">
+        <div class="filter-checkbox" id="check-text"></div>
+        <span class="filter-label">📝 Text</span>
+        <span class="filter-count" id="count-text">0</span>
+      </div>
+      <div class="filter-option" data-filter="type" data-value="data">
+        <div class="filter-checkbox" id="check-data"></div>
+        <span class="filter-label">📊 Data</span>
+        <span class="filter-count" id="count-data">0</span>
+      </div>
+      <div class="filter-option" data-filter="type" data-value="video">
+        <div class="filter-checkbox" id="check-video"></div>
+        <span class="filter-label">🎬 Video</span>
+        <span class="filter-count" id="count-video">0</span>
+      </div>
+    </div>
+
+    <!-- Categories -->
+    <div class="filter-group">
+      <div class="filter-group-title">Categories</div>
+      <div id="category-filters"></div>
+    </div>
+
+    <!-- Sources -->
+    <div class="filter-group">
+      <div class="filter-group-title">Source API</div>
+      <div id="source-filters"></div>
+    </div>
+  </aside>
+
+  <!-- Main Results Area -->
+  <main>
+    <!-- Sort bar -->
+    <div class="sort-bar">
+      <div class="sort-tabs">
+        <button class="sort-tab active" data-sort="relevance">Relevance</button>
+        <button class="sort-tab" data-sort="category">Category</button>
+        <button class="sort-tab" data-sort="source">Source</button>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <div class="view-toggle">
+          <button class="view-btn active" id="grid-view" title="Grid view">⊞</button>
+          <button class="view-btn" id="list-view" title="List view">☰</button>
+        </div>
+        <button class="btn-secondary" id="filters-toggle" style="display: none; font-size: 0.8rem; padding: 6px 12px;">
+          🔧 Filters
+        </button>
+      </div>
+    </div>
+
+    <!-- Loading skeletons -->
+    <div id="results-loading" class="results-loading"></div>
+
+    <!-- Results grid -->
+    <div id="results-grid" class="results-grid"></div>
+
+    <!-- Empty state -->
+    <div id="results-empty" class="empty-state hidden">
+      <span class="empty-state-icon">🔭</span>
+      <h3 class="empty-state-title">No results found</h3>
+      <p class="empty-state-desc">
+        We searched across all our APIs but couldn't find results for your query.
+        Try different keywords or browse by category.
+      </p>
+      <a href="/" class="btn-primary" style="display: inline-flex; margin: 0 auto;">← Back to Explore</a>
+    </div>
+
+    <!-- Load more -->
+    <div class="load-more-area" id="load-more-area" style="display: none;">
+      <button class="load-more-btn" id="load-more-btn">Load more results</button>
+    </div>
+  </main>
+</div>
+
+<!-- ─── Toast ───────────────────────────────────────────────────────────────── -->
+<div class="toast-container" id="toast-container"></div>
+
+<script src="/js/cards.js"></script>
+<script src="/js/results.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+ /* أضف أي CSS هنا حسب التصميم */
+ body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #171717;
+  }
+  #content {  
+    padding: 100px 0;
+    background: rgb(0, 0, 0);
+    gap: 12px; 
+    color: wheat;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+/* LOGOS */
+ 
+#logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 57px;
+  left: 9px;
+    
+}
+#logo img{
+  width: 60px;
+
+}
+#logo h1{
+  font-size: 20px;
+ text-shadow: 0 0 12px black;
+
+}
+  .img {
+    width: 222px;
+    height:320px;
+    border: 1px solid #000000;
+    box-shadow: inset 0 0 12px 2px rgb(115, 115, 115);
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+   
+  }
+  .text {
+    max-width: 500px;
+    width: 100%;
+    height: 150px;
+    overflow: auto; 
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 5px rgb(255, 0, 0);
+    border: 1px solid wheat;
+    border-radius: 5px;
+    background:rgba(27, 12, 12, 0.334);
+}
+
+  #searchall{
+    position: fixed;
+    top: -20px;
+    margin: 30px 0;
+    width: 100%;
+  }
+  #search{
+    width:230px;
+    padding: 10px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgb(0, 0, 0);
+  }
+  #submit{
+    padding: 10px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 12px;
+
+  }
+h1{
+  text-shadow: 0 0 5px wheat;
+}
+.video-iframe{
+  width: 100%;
+  height: 270px;
+  border: 2px solid wheat;
+}
+#andadd{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+   z-index: 3;
+   position: fixed;
+   top: 93%; 
+}
+#and{
+  color: #833397;
+  text-shadow: 1px 5px 2px rgb(131 0 255 / 63%);
+  border-radius: 19px;
+  border: 2px solid rgb(0, 0, 0);
+  font-size: 25px;
+  background: rgba(255, 255, 255, 0.808);
+   
+
+}
